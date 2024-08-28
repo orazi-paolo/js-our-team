@@ -31,13 +31,17 @@ const team = [
         foto: 'barbara-ramos-graphic-designer.jpg'
     }
 ]
+// prendo dal dom l elemento che mi serve
+const teamContainer = document.getElementById('team-container');
 
-// stampo in console nome ruolo e la stringa della foto 
+// creo l elemento ul
+const teamList = document.createElement('ul');
+// per ogni persona creo un 'li' e lo aggiungiamo al 'ul'
 for (let i = 0; i < team.length; i++) {
     const member = team[i];
-    console.log(`
-        Nome: ${member.name}
-        Ruolo: ${member.job}
-        Foto: ${member.foto}
-        `)
+    const memberItem = document.createElement('li');
+    memberItem.innerHTML = `Nome: ${member.name}, Ruolo: ${member.job}, Foto: ${member.foto}`;
+    teamList.appendChild(memberItem);
 }
+// aggiungo l'elenco che ho creato al div contenitore 
+teamContainer.appendChild(teamList);
