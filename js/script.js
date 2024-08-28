@@ -40,7 +40,7 @@ const teamList = document.createElement('ul');
 for (let i = 0; i < team.length; i++) {
     const member = team[i];
     const memberItem = document.createElement('li');
-    memberItem.innerHTML = `Nome: ${member.name}, Ruolo: ${member.job}, Foto: ${member.foto}`;
+    memberItem.innerHTML = `Nome: ${member.name}, Ruolo: ${member.job}, Foto: <img src="img/${member.foto}" alt="${member.name}">`;
     teamList.appendChild(memberItem);
 }
 // aggiungo l'elenco che ho creato al div contenitore 
