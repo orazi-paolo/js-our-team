@@ -31,3 +31,13 @@ const team = [
         foto: 'barbara-ramos-graphic-designer.jpg'
     }
 ]
+
+// stampo in console nome ruolo e la stringa della foto 
+for (let i = 0; i < team.length; i++) {
+    const member = team[i];
+    console.log(`
+        Nome: ${member.name}
+        Ruolo: ${member.job}
+        Foto: ${member.foto}
+        `)
+}
