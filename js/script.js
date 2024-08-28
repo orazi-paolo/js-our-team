@@ -31,17 +31,22 @@ const team = [
         foto: 'barbara-ramos-graphic-designer.jpg'
     }
 ]
-// prendo dal dom l elemento che mi serve
+// prendo dal dom l elementi che mi servono
 const teamContainer = document.getElementById('team-container');
 
-// creo l elemento ul
-const teamList = document.createElement('ul');
-// per ogni persona creo un 'li' e lo aggiungiamo al 'ul'
+// creo la stringa da comporre
+let memberItem = '';
+// per ogni persona creo la card
 for (let i = 0; i < team.length; i++) {
     const member = team[i];
-    const memberItem = document.createElement('li');
-    memberItem.innerHTML = `Nome: ${member.name}, Ruolo: ${member.job}, Foto: <img src="img/${member.foto}" alt="${member.name}">`;
-    teamList.appendChild(memberItem);
+    memberItem += `
+    <div class="col-4">
+        <div class="card">
+            <img src="img/${member.foto}" alt="${member.name}">
+            <div class="name">${member.name}</div>
+            <div class="job">${member.job}</div>
+        </div>
+    </div>
+    `;
 }
-// aggiungo l'elenco che ho creato al div contenitore 
-teamContainer.appendChild(teamList);
+teamContainer.innerHTML = memberItem;
