@@ -4,6 +4,9 @@ main {
 
 .card {
     border: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .name {
@@ -19,4 +22,10 @@ main {
     margin-bottom: 20px;
     font-style: italic;
     color: grey;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    max-height: 250px;
 }
